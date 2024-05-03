@@ -210,6 +210,7 @@ resource "vsphere_virtual_machine" "vm" {
       disk_sharing      = lookup(terraform_disks.value, "disk_sharing", null)
       attach            = lookup(terraform_disks.value, "attach", null)
       path              = lookup(terraform_disks.value, "path", null)
+      keep_on_remove    = lookup(terraform_disks.value, "keep_on_remove", null)
     }
   }
   clone {
