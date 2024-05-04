@@ -81,6 +81,12 @@ variable "disk_mode" {
   default     = []
 }
 
+variable "keep_on_remove" {
+  description = "keep the OS disc (taken from the VM template) in case of VM destruction"
+  type = list(bool)
+  default = []
+}
+
 variable "template_storage_policy_id" {
   description = "List of UUIDs of the storage policy to assign to the template disk."
   type        = list(any)

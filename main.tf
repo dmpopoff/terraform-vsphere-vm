@@ -151,6 +151,7 @@ resource "vsphere_virtual_machine" "vm" {
       io_reservation    = length(var.io_reservation) > 0 ? var.io_reservation[template_disks.key] : null
       io_share_level    = length(var.io_share_level) > 0 ? var.io_share_level[template_disks.key] : "normal"
       io_share_count    = length(var.io_share_level) > 0 && var.io_share_level[template_disks.key] == "custom" ? var.io_share_count[template_disks.key] : null
+      keep_on_remove    = length(var.keep_on_remove) > 0 ? var.keep_on_remove[template_disks.key] : null
     }
   }
   // Disk for template from Content Library
@@ -169,6 +170,7 @@ resource "vsphere_virtual_machine" "vm" {
       io_share_level    = length(var.io_share_level) > 0 ? var.io_share_level[template_disks.key] : "normal"
       io_share_count    = length(var.io_share_level) > 0 && var.io_share_level[template_disks.key] == "custom" ? var.io_share_count[template_disks.key] : null
       disk_mode         = length(var.disk_mode) > 0 ? var.disk_mode[template_disks.key] : null
+      keep_on_remove    = length(var.keep_on_remove) > 0 ? var.keep_on_remove[template_disks.key] : null
     }
   }
   // Additional disks defined by Terraform config
